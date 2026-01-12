@@ -10,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio - GIS & Data Specialist',
-  description: 'Professional portfolio showcasing expertise in GIS, geodatabases, and data visualization',
+  title: 'Shreya Rawale',
+  description: 'Personal webpage and coffee geovisualization',
 };
 
 export default function RootLayout({
