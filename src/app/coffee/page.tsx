@@ -8,8 +8,8 @@ import type { CoffeeShopFeature, CoffeeShopCollection } from '@/types/coffee';
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
-const MAPBOX_USERNAME = 'srawale';
-const DATASET_ID = 'cmk1l12i38cdh1pnwbyz242dn';
+const MAPBOX_USERNAME = process.env.NEXT_PUBLIC_MAPBOX_USERNAME;
+const DATASET_ID = process.env.NEXT_PUBLIC_MAPBOX_DATASET_ID;
 
 export default function CoffeePage() {
   const [selectedShop, setSelectedShop] = useState<CoffeeShopFeature | null>(null);
