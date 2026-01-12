@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Mail, Linkedin, Github } from 'lucide-react';
+import { Mail, Linkedin, Github, Menu, X } from 'lucide-react';
+import { useState } from 'react';
 
 interface NavItem {
   name: string;
@@ -11,19 +12,29 @@ interface NavItem {
 
 export default function Header() {
   const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems: NavItem[] = [
     { name: 'Home', path: '/' },
     { name: 'Experience', path: '/experience' },
-    { name: 'Columbus Coffee Guide', path: '/coffee' },
+    { name: 'About', path: '/about' },
+    { name: 'Coffee Map', path: '/coffee' },
   ];
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark-bg border-b border-dark-border">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Left Side - Navigation Links */}
-          <div className="flex space-x-1 sm:space-x-2">
+          {/* Desktop Navigation - Hidden on mobile */}
+          <div className="hidden md:flex space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -38,8 +49,21 @@ export default function Header() {
               </Link>
             ))}
           </div>
+
+          {/* Mobile Hamburger Button - Shown only on mobile */}
+          <button
+            onClick={toggleMobileMenu}
+            className="md:hidden text-text-primary hover:text-accent-blue transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
           
-          {/* Right Side - Custom Flaticon Icons */}
+          {/* Social Icons - Always visible */}
           <div className="flex items-center space-x-6">
             <a
               href="https://linkedin.com/in/shreyarawale"
@@ -48,20 +72,50 @@ export default function Header() {
               className="hover:opacity-70 transition-opacity"
               aria-label="LinkedIn"
             >
-              <img src="/icons/linkedin.png" alt="LinkedIn" className="w-7 h-7 object-contain" />
+              <img src="/icons/linkedin.png" alt="LinkedIn" className="w-5 h-5 invert object-contain" />
+            </a>
+            
+            <a
+              href="mailto:shreyasrawale@gmail.com"
+              className="hover:opacity-70 transition-opacity"
+              aria-label="Email"
+            >
+              <img src="/icons/email.png" alt="Email" className="w-5 h-6 invert" />
             </a>
 
             <a
-              href="https://github.com/ssrawale"
+              href="https://github.com/srawale"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity"
               aria-label="GitHub"
             >
-              <img src="/icons/github.png" alt="GitHub" className="w-8 h-8 object-contain" />
+              <img src="/icons/github.png" alt="GitHub" className="w-5 h-5 invert object-contain" />
             </a>
           </div>
         </div>
+
+        {/* Mobile Menu - Slides down when open */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-dark-border">
+            <div className="py-4 space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={closeMobileMenu}
+                  className={`block px-4 py-3 text-base font-medium transition-colors ${
+                    pathname === item.path
+                      ? 'text-accent-blue bg-dark-charcoal'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-dark-charcoal'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );
