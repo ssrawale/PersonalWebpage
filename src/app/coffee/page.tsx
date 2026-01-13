@@ -7,9 +7,10 @@ import Image from 'next/image';
 import type { CoffeeShopFeature, CoffeeShopCollection } from '@/types/coffee';
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-
 const MAPBOX_USERNAME = process.env.NEXT_PUBLIC_MAPBOX_USERNAME;
 const DATASET_ID = process.env.NEXT_PUBLIC_MAPBOX_DATASET_ID;
+
+
 
 export default function CoffeePage() {
   const [selectedShop, setSelectedShop] = useState<CoffeeShopFeature | null>(null);
@@ -96,7 +97,7 @@ export default function CoffeePage() {
               className="w-8 h-8"
             />
             <h1 className="text-4xl font-bold text-text-primary">
-              Columbus Coffee Scene
+              Columbus Coffee Map
             </h1>
           </div>
           <p className="text-lg text-text-secondary max-w-3xl">

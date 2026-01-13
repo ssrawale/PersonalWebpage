@@ -60,18 +60,18 @@ export default function Experience() {
       description: [
         '• Society of Women Engineers',
         '• Association of Computing Machinery, Women\'s Chapter'
-        ]
+      ]
     },
   ];
 
   const extracurriculars: Experience[] = [
     {
-      title: 'Buckeye AutoDrive',
+      title: 'Ohio State Buckeye AutoDrive',
       company: 'Lead Project Manager',
-      location: 'Ohio State University',
+      location: 'Columbus, OH',
       period: 'August 2023 - December 2025',
       description: [
-        '• Lead a team of 90+ members in the development of an autonomous vehicle adhering General Motors and SAE Level 4 Automation standards',
+        '• Lead Ohio State chapter of 90+ members in the development of an autonomous vehicle adhering General Motors and SAE Level 4 Automation standards',
         '• Head writing system requirement and validation reports while ensuring alignment across technical pipelines by leveraging domain knowledge of sensors and autonomous technologies'
       ]
     },
@@ -80,33 +80,34 @@ export default function Experience() {
   return (
     <div className="min-h-screen py-16 px-4">
       <div className="max-w-4xl mx-auto">
+        
+        {/* Education Section */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4 text-text-primary">Education</h1>
         </div>
 
-        {/* Education Section */}
-        <div className="space-y-8">
+        <div className="space-y-8 mb-12">
           {education.map((exp, index) => (
             <div
               key={index}
-              className="rounded-md bg-zinc-100 p-6 hover:border-accent-blue transition-colors"
+              className="px-6 py-6 bg-zinc-100 rounded-md"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
-                  <h2 className="text-accent-blue text-2xl font-semibold">{exp.title}</h2>
+                  <h2 className="text-2xl font-semibold text-accent-blue">{exp.title}</h2>
                   <h3 className="text-lg text-text-secondary italic mt-1">{exp.company}</h3>
                 </div>
-                <div className="text-right mt-2 sm:mt-0">
-                  <span className="text-sm font-medium block">
+                <div className="mt-2 sm:mt-0 sm:text-right">
+                  <span className="text-text-secondary text-sm block mt-1">
                     {exp.period}
                   </span>
-                  <span className="text-text-secondary text-sm block mt-1 italic">
+                  <span className="text-text-secondary text-sm block mt-1">
                     {exp.location}
                   </span>
                 </div>
               </div>
-
-              <div className="space-y-1 mt-3">
+              
+              <div className="space-y-1">
                 {exp.description.map((item, idx) => (
                   <p key={idx} className="text-text-secondary leading-relaxed">
                     {item}
@@ -117,34 +118,33 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* Section Divider */}
-        <div className="my-12">
-          <h2 className="text-3xl font-bold text-text-primary mb-8">Experiences</h2>
+        {/* Work Experience Section */}
+        <div className="mb-12">
+          <h1 className="text-4xl font-bold mb-4 text-text-primary">Experience</h1>
         </div>
 
-        {/* Work Experience Section */}
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="rounded-md bg-zinc-100 p-6 hover:border-accent-blue transition-colors"
+              className="px-6 py-6 bg-zinc-100 rounded-md"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
-                  <h2 className="text-accent-blue text-2xl font-semibold">{exp.title}</h2>
+                  <h2 className="text-2xl font-semibold text-accent-blue">{exp.title}</h2>
                   <h3 className="text-lg text-text-secondary italic mt-1">{exp.company}</h3>
                 </div>
-                <div className="text-right mt-2 sm:mt-0">
-                  <span className="text-sm font-medium block">
+                <div className="mt-2 sm:mt-0 sm:text-right">
+                  <span className="text-text-secondary text-sm block mt-1">
                     {exp.period}
                   </span>
-                  <span className="text-text-secondary text-sm block mt-1 italic">
+                  <span className="text-text-secondary text-sm block mt-1">
                     {exp.location}
                   </span>
                 </div>
               </div>
-
-              <div className="space-y-1 mt-3">
+              
+              <div className="space-y-1">
                 {exp.description.map((item, idx) => (
                   <p key={idx} className="text-text-secondary leading-relaxed">
                     {item}
@@ -155,34 +155,33 @@ export default function Experience() {
           ))}
         </div>
 
-        {/* Section Divider */}
+        {/* Extracurriculars Section */}
         <div className="my-12">
           <h2 className="text-3xl font-bold text-text-primary mb-8">Extracurriculars</h2>
         </div>
 
-        {/* Extracurriculars Section */}
         <div className="space-y-8">
           {extracurriculars.map((exp, index) => (
             <div
               key={index}
-              className="rounded-md bg-zinc-100 p-6 hover:border-accent-blue transition-colors"
+              className="px-6 py-6 bg-zinc-100 rounded-md"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
                 <div>
-                  <h2 className="text-accent-blue text-2xl font-semibold">{exp.title}</h2>
+                  <h2 className="text-2xl font-semibold text-accent-blue">{exp.title}</h2>
                   <h3 className="text-lg text-text-secondary italic mt-1">{exp.company}</h3>
                 </div>
-                <div className="text-right mt-2 sm:mt-0">
-                  <span className="text-sm font-medium block">
+                <div className="mt-2 sm:mt-0 sm:text-right">
+                  <span className="text-text-secondary text-sm block mt-1">
                     {exp.period}
                   </span>
-                  <span className="text-text-secondary text-sm block mt-1 italic">
+                  <span className="text-text-secondary text-sm block mt-1">
                     {exp.location}
                   </span>
                 </div>
               </div>
-
-              <div className="space-y-1 mt-3">
+              
+              <div className="space-y-1">
                 {exp.description.map((item, idx) => (
                   <p key={idx} className="text-text-secondary leading-relaxed">
                     {item}

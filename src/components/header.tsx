@@ -17,7 +17,6 @@ export default function Header() {
   const navItems: NavItem[] = [
     { name: 'Home', path: '/' },
     { name: 'Experience', path: '/experience' },
-    { name: 'About', path: '/about' },
     { name: 'Coffee Map', path: '/coffee' },
   ];
 
@@ -72,25 +71,17 @@ export default function Header() {
               className="hover:opacity-70 transition-opacity"
               aria-label="LinkedIn"
             >
-              <img src="/icons/linkedin.png" alt="LinkedIn" className="w-5 h-5 invert object-contain" />
-            </a>
-            
-            <a
-              href="mailto:shreyasrawale@gmail.com"
-              className="hover:opacity-70 transition-opacity"
-              aria-label="Email"
-            >
-              <img src="/icons/email.png" alt="Email" className="w-5 h-6 invert" />
+              <img src="/icons/linkedin.png" alt="LinkedIn" className="w-7 h-7 object-contain" />
             </a>
 
             <a
-              href="https://github.com/srawale"
+              href="https://github.com/ssrawale"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:opacity-70 transition-opacity"
               aria-label="GitHub"
             >
-              <img src="/icons/github.png" alt="GitHub" className="w-5 h-5 invert object-contain" />
+              <img src="/icons/github.png" alt="GitHub" className="w-8 h-8 object-contain" />
             </a>
           </div>
         </div>
